@@ -11,11 +11,12 @@ export default function WebsiteStarter() {
   const pageTitle = "10: Champions Reignited | Ore Oduba & Joanne Clifton Tour";
   const pageDescription =
     "10 years after winning BBC's Strictly Come Dancing, Ore Oduba and Joanne Clifton reunite for 10: Champions Reignited — a spectacular live touring show filled with songs, stories and dances from their glittering careers.";
-  const socialImage = heroImage;
+  const siteUrl = "https://10championsreignited.co.uk";
+  const socialImage = `${siteUrl}${heroImage}`;
 
   const events = [
     { date: "17 August 2026", city: "Bournemouth", venue: "Bournemouth Pavilion", link: "https://www.bournemouthpavilion.co.uk" },
-    { date: "18 August 2026", city: "Fareham", venue: "Fareham Live", link: "https://www.farehamlive.co.uk" },
+    { date: "18 August 2027", city: "Fareham", venue: "Fareham Live", link: "https://www.farehamlive.co.uk" },
     { date: "19 August 2026", city: "Crawley", venue: "The Hawth Crawley", link: "https://www.hawth.co.uk" },
     { date: "20 August 2026", city: "Peterborough", venue: "New Theatre Peterborough", link: "https://www.newtheatre-peterborough.com" },
     { date: "21 August 2026", city: "Buxton", venue: "Buxton Opera House", link: "https://www.buxtonoperahouse.org.uk" },
@@ -25,6 +26,34 @@ export default function WebsiteStarter() {
 
   useEffect(() => {
     document.title = pageTitle;
+
+    // Favicon
+    const favicon = document.createElement("link");
+    favicon.rel = "icon";
+    favicon.href = heroImage;
+    favicon.type = "image/jpeg";
+    document.head.appendChild(favicon);
+
+    // Structured data for Google (Event rich result)
+    const eventSchema = {
+      "@context": "https://schema.org",
+      "@type": "TheaterEvent",
+      "name": "10: Champions Reignited",
+      "description": pageDescription,
+      "image": socialImage,
+      "url": siteUrl,
+      "performer": [
+        { "@type": "Person", "name": "Ore Oduba" },
+        { "@type": "Person", "name": "Joanne Clifton" }
+      ],
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
+    };
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.text = JSON.stringify(eventSchema);
+    document.head.appendChild(script);
 
     const ensureMetaTag = (attribute: string, key: string, content: string) => {
       const selector = `meta[${attribute}="${key}"]`;
@@ -42,12 +71,15 @@ export default function WebsiteStarter() {
     ensureMetaTag("property", "og:title", pageTitle);
     ensureMetaTag("property", "og:description", pageDescription);
     ensureMetaTag("property", "og:type", "website");
+    ensureMetaTag("property", "og:url", siteUrl);
     ensureMetaTag("property", "og:image", socialImage);
+    ensureMetaTag("property", "og:site_name", "10: Champions Reignited");
     ensureMetaTag("property", "og:image:alt", "10: Champions Reignited starring Ore Oduba and Joanne Clifton");
     ensureMetaTag("name", "twitter:card", "summary_large_image");
     ensureMetaTag("name", "twitter:title", pageTitle);
     ensureMetaTag("name", "twitter:description", pageDescription);
     ensureMetaTag("name", "twitter:image", socialImage);
+    ensureMetaTag("name", "twitter:url", siteUrl);
   }, []);
 
   const scrollToDates = (e: React.MouseEvent<HTMLAnchorElement>) => {
