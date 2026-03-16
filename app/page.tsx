@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import React, { useEffect } from "re
 import { motion } from "framer-motion";
 
 const heroImage = "/hero-poster.jpeg";
@@ -15,7 +15,7 @@ export default function WebsiteStarter() {
 
   const events = [
     { date: "17 August 2026", city: "Bournemouth", venue: "Bournemouth Pavilion", link: "https://www.bournemouthpavilion.co.uk" },
-    { date: "18 August 2026", city: "Fareham", venue: "Fareham Live", link: "https://www.farehamlive.co.uk" },
+    { date: "18 August 2027", city: "Fareham", venue: "Fareham Live", link: "https://www.farehamlive.co.uk" },
     { date: "19 August 2026", city: "Crawley", venue: "The Hawth Crawley", link: "https://www.hawth.co.uk" },
     { date: "20 August 2026", city: "Peterborough", venue: "New Theatre Peterborough", link: "https://www.newtheatre-peterborough.com" },
     { date: "21 August 2026", city: "Buxton", venue: "Buxton Opera House", link: "https://www.buxtonoperahouse.org.uk" },
@@ -26,7 +26,7 @@ export default function WebsiteStarter() {
   useEffect(() => {
     document.title = pageTitle;
 
-    const ensureMetaTag = (attribute, key, content) => {
+    const ensureMetaTag = (attribute: string, key: string, content: string) => {
       const selector = `meta[${attribute}="${key}"]`;
       let tag = document.head.querySelector(selector);
       if (!tag) {
@@ -50,7 +50,7 @@ export default function WebsiteStarter() {
     ensureMetaTag("name", "twitter:image", socialImage);
   }, []);
 
-  const scrollToDates = (e) => {
+  const scrollToDates = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const section = document.getElementById("dates");
     if (section) {
@@ -86,6 +86,10 @@ export default function WebsiteStarter() {
               >
                 10: Champions Reignited
               </motion.h1>
+
+              <div className="mt-4 inline-block rounded-full border border-yellow-400/60 bg-black/40 px-4 py-1 text-sm font-semibold uppercase tracking-wider text-yellow-300 shadow-[0_0_12px_rgba(212,175,55,0.35)]">
+                August 2026 UK Tour
+              </div>
 
               <p className="mt-4 text-xl font-semibold text-yellow-400 drop-shadow-[0_2px_10px_rgba(0,0,0,0.65)]">
                 Ore Oduba & Joanne Clifton – Strictly Come Dancing Champions
