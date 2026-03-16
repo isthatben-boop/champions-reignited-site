@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "re
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 
 const heroImage = "/hero-poster.jpeg";
