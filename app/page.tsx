@@ -15,13 +15,12 @@ export default function WebsiteStarter() {
   const socialImage = `${siteUrl}${heroImage}`;
 
   const events = [
-    { date: "17 August 2026", city: "Bournemouth", venue: "Bournemouth Pavilion", link: "https://www.bournemouthpavilion.co.uk" },
-    { date: "18 August 2027", city: "Fareham", venue: "Fareham Live", link: "https://www.farehamlive.co.uk" },
-    { date: "19 August 2026", city: "Crawley", venue: "The Hawth Crawley", link: "https://www.hawth.co.uk" },
-    { date: "20 August 2026", city: "Peterborough", venue: "New Theatre Peterborough", link: "https://www.newtheatre-peterborough.com" },
-    { date: "21 August 2026", city: "Buxton", venue: "Buxton Opera House", link: "https://www.buxtonoperahouse.org.uk" },
-    { date: "22 August 2026", city: "Grimsby", venue: "Grimsby Auditorium", link: "https://www.grimsbyauditorium.org.uk" },
-    
+    { date: "17 August 2026", city: "Bournemouth", venue: "Bournemouth Pavilion", link: "https://www.bournemouthpavilion.co.uk/events/ore-joanne-2026" },
+    { date: "18 August 2027", city: "Fareham", venue: "Fareham Live", link: "https://trafalgartickets.com/fareham-live-fareham/en-GB/event/dance/ore-oduba-and-joanne-clifton-ten-champions-reignited-tickets" },
+    { date: "19 August 2026", city: "Crawley", venue: "The Hawth Crawley", link: "https://www.parkwoodtheatres.co.uk/the-hawth/whats-on/10---joanne-and-ore-champions-reignited" },
+    { date: "20 August 2026", city: "Peterborough", venue: "New Theatre Peterborough", link: "https://newtheatre-peterborough.com/events/10-joanne-and-ore-champions-reignited/" },
+    { date: "21 August 2026", city: "Buxton", venue: "Buxton Opera House", link: "https://buxtonoperahouse.org.uk/events/ten-ore-oduba-and-joanne-clifton-2026/" },
+    { date: "22 August 2026", city: "Grimsby", venue: "Grimsby Auditorium", link: "https://grimsbyauditorium.org.uk/show/10-joanne-and-ore-champions-reignited/" },
   ];
 
   useEffect(() => {
@@ -104,7 +103,7 @@ export default function WebsiteStarter() {
             <div className="absolute inset-x-0 bottom-0 h-80 bg-gradient-to-b from-transparent via-black/40 to-black" />
           </div>
 
-          <div className="absolute inset-x-0 bottom-0 z-10 px-6 pb-10 text-center">
+          <div className="absolute inset-x-0 bottom-0 z-10 px-6 pb-10 pt-[env(safe-area-inset-top)] text-center">
             <div className="mx-auto max-w-5xl">
               <p className="mb-4 text-sm uppercase tracking-[0.3em] text-white/70">
                 Buddy Boy Productions
