@@ -16,11 +16,12 @@ export default function WebsiteStarter() {
 
   const events = [
     { date: "17 August 2026", city: "Bournemouth", venue: "Bournemouth Pavilion", link: "https://www.bournemouthpavilion.co.uk/events/ore-joanne-2026" },
-    { date: "18 August 2026", city: "Fareham", venue: "Fareham Live", link: "https://trafalgartickets.com/fareham-live-fareham/en-GB/event/dance/ore-oduba-and-joanne-clifton-ten-champions-reignited-tickets" },
+    { date: "18 August 2027", city: "Fareham", venue: "Fareham Live", link: "https://trafalgartickets.com/fareham-live-fareham/en-GB/event/dance/ore-oduba-and-joanne-clifton-ten-champions-reignited-tickets" },
     { date: "19 August 2026", city: "Crawley", venue: "The Hawth Crawley", link: "https://www.parkwoodtheatres.co.uk/the-hawth/whats-on/10---joanne-and-ore-champions-reignited" },
     { date: "20 August 2026", city: "Peterborough", venue: "New Theatre Peterborough", link: "https://newtheatre-peterborough.com/events/10-joanne-and-ore-champions-reignited/" },
     { date: "21 August 2026", city: "Buxton", venue: "Buxton Opera House", link: "https://buxtonoperahouse.org.uk/events/ten-ore-oduba-and-joanne-clifton-2026/" },
     { date: "22 August 2026", city: "Grimsby", venue: "Grimsby Auditorium", link: "https://grimsbyauditorium.org.uk/show/10-joanne-and-ore-champions-reignited/" },
+    { date: "23 August 2026", city: "Newcastle", venue: "Tyne Theatre & Opera House", link: "https://www.tynetheatreandoperahouse.uk/booking/?event-id=7702&instances-id=165201" },
   ];
 
   useEffect(() => {
